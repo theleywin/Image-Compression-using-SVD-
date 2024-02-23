@@ -53,3 +53,19 @@ newImage = Image.merge("RGB", (imr, img, imb))
 originalImage.show()
 newImage.show()
 
+# Calculate the compression percentage
+mr = imageHeight
+mc = imageWidth
+
+originalSize = mr * mc * 3
+compressedSize = singularValuesLimit * (1 + mr + mc) * 3
+
+print('original size of the image:')
+print(originalSize)
+
+print('compressed size of the image:')
+print(compressedSize)
+
+ratio = compressedSize * 1.0 / originalSize
+
+print('Compressed image size is ' + str(round(ratio * 100, 2)) + '% of the original image ')
