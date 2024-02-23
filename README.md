@@ -2,4 +2,5 @@
 ## Image compression via SVD
 
 
-![svd](https://github.com/theleywin/Image-Compression-using-SVD-/assets/123096717/19f4606a-7dbe-4713-99d8-70a057b382e5)
+![example](https://github.com/theleywin/Image-Compression-using-SVD-/assets/123096717/3f43c632-4a3e-45d9-a8b9-0f3ccafcb16e)
+
