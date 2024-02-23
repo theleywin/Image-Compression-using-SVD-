@@ -22,3 +22,34 @@ def compressSingleChannel(channelDataMatrix, singularValuesLimit):
     aChannelCompressedInner = numpy.matmul(leftSide, vhChannel[0:k, :])
     aChannelCompressed = aChannelCompressedInner.astype('uint8')
     return aChannelCompressed
+
+# Main Program
+
+print('Image Compression using SVD for a school project')
+
+Red, Green, Blue, originalImage = openImage()
+
+# image width and height:
+imageWidth = 512
+imageHeight = 512
+
+# number of singular values to use for reconstructing the compressed image
+singularValuesLimit = 100
+
+# compressing each color
+RedCompressed = compressSingleChannel(Red, singularValuesLimit)
+GreenCompressed = compressSingleChannel(Green, singularValuesLimit)
+BlueCompressed = compressSingleChannel(Blue, singularValuesLimit)
+
+# creating the new images
+imr = Image.fromarray(RedCompressed, mode=None)
+img = Image.fromarray(GreenCompressed, mode=None)
+imb = Image.fromarray(BlueCompressed, mode=None)
+
+# create the new image
+newImage = Image.merge("RGB", (imr, img, imb))
+
+# show both images
+originalImage.show()
+newImage.show()
+
