@@ -27,7 +27,7 @@ def compressSingleChannel(channelDataMatrix, singularValuesLimit):
 
 print('Image Compression using SVD for a school project')
 
-Red, Green, Blue, originalImage = openImage()
+Red, Green, Blue, originalImage = openImage('test.jpg')
 
 # image width and height:
 imageWidth = 512
